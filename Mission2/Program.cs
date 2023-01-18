@@ -8,16 +8,17 @@ namespace Mission2
         {
             Console.WriteLine("Welcome to the dice throwing simulator!\n");
 
+            //declare variables
             float numRolls = 0;
+            int[] results = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+            Random rnd = new Random();
 
+            //Grab the number of rolls from the user
             Console.WriteLine("How many dice rolls would you like to simulate? ");
             numRolls = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine();
 
-            Random rnd = new Random();
-            
-            int[] results = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-
+            //Simulate the dice rolling. Add them together. Increment array.
             for (int i = 0; i < numRolls; i++)
             {
                 int dice1 = rnd.Next(1, 7);
@@ -32,6 +33,7 @@ namespace Mission2
             Console.WriteLine("Each \" * \" represents 1% of the total number of rolls.");
             Console.WriteLine("Total number of rolls = " + numRolls + ".\n");
 
+            //Determine the number of * and print them
             for (int i = 0; i < results.Length; i++)
             {
                 results[i] = (int)((results[i] / numRolls) * 100);

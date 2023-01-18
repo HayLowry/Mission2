@@ -38,6 +38,9 @@ namespace Mission2
                 string percentResults = new string('*', results[i]);
                 Console.Write((i + 2) + ": " + percentResults + "\n");
             }
+
+            Console.WriteLine("Thank you for using the dice throwing simulator. Goodbye!");
+
         }
     }
 }
